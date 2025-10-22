@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import type { Post } from '../types/Post';
 import './HeroSlider.css';
 
@@ -27,8 +28,9 @@ const HeroSlider = ({ posts }: HeroSliderProps) => {
   return (
     <div className="hero-slider">
       {featuredPosts.map((post, index) => (
-        <div
+        <Link
           key={post.id}
+          to={`/posts/${post.id}`}
           className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
           style={{ backgroundImage: `url(${post.thumbnail})` }}
         >
@@ -48,7 +50,7 @@ const HeroSlider = ({ posts }: HeroSliderProps) => {
               <span className="hero-read-time">10 phút đọc</span>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
       
       <div className="hero-dots">

@@ -57,11 +57,6 @@ const PostDetail = ({ posts, onDelete }: PostDetailProps) => {
       </div>
 
       <div className="post-detail-body">
-        <div className="post-detail-content">
-          <p className="post-description-full">{post.description}</p>
-          <div className="post-content">{post.content}</div>
-        </div>
-
         <div className="post-detail-actions">
           <button onClick={() => navigate('/')} className="btn-back">
             Quay lại
@@ -74,6 +69,11 @@ const PostDetail = ({ posts, onDelete }: PostDetailProps) => {
               Xóa bài viết
             </button>
           </div>
+        </div>
+
+        <div className="post-detail-content">
+          <p className="post-description-full">{post.description}</p>
+          <div className="post-content">{post.content}</div>
         </div>
       </div>
     </div>
